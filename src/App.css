@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PlayMyBeat";
+  src: url("./assets/fonts/PlayMyBeat.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-primary: "PlayMyBeat", sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+.nav_tag {
+  position: relative;
+  border-bottom: 2px solid transparent;
+}
+
+.nav_tag::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-image: linear-gradient(
+    90deg,
+    rgba(246, 148, 43, 1),
+    rgba(224, 64, 94, 1),
+    rgba(152, 29, 160, 1)
+  );
+  border-radius: 10px;
+  transition: width 0.4s ease-in-out;
+}
+
+.nav_tag:hover:not(.active)::after {
+  width: 100%;
+}
+
+
+.active {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    rgba(246, 148, 43, 1),
+    rgba(224, 64, 94, 1),
+    rgba(152, 29, 160, 1)
+  );
+  border-image-slice: 1;
+}
+
+.gradient_text{
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    rgba(246, 148, 43, 1),
+    rgba(224, 64, 94, 1),
+    rgba(152, 29, 160, 1)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.shadow_box{
+  box-shadow:
+  0px 0px 5px rgba(246, 148, 43, 0.4),
+  0px 0px 5px rgba(224, 64, 94, 0.3),
+  0px 0px 5px rgba(19, 18, 19, 0.2);
+  /* border-radius: 20px; */
+  transition: all 0.3s ease-in-out;
+}
+
+.box_shadow{
+  box-shadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px"
+}

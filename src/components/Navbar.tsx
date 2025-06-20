@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
-import Logo from "@assets/images/PlayMyBeat_light_Logo.png";
+import Logo from "../assets/images/PlayMyBeat_light_Logo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

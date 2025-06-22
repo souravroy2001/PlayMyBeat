@@ -1,10 +1,10 @@
 import { Link } from "react-router";
 import logo from "../assets/images/PlayMyBeat_light_Logo.png";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { HashLink } from "react-router-hash-link"
+import svg from "../utils/svg";
 
 function Footer() {
-  const data = new Date();
+  const data:Date = new Date();
 
   return (
     <div className="bg-[#080810] w-full flex flex-col items-center px-6 py-10">
@@ -18,10 +18,10 @@ function Footer() {
             Making every night unforgettable with your favorite beats.
           </p>
           <div className="flex gap-4 mt-2">
-            <Twitter color="#9CA3AF" />
-            <Instagram color="#9CA3AF" />
-            <Facebook color="#9CA3AF" />
-            <Linkedin color="#9CA3AF" />
+            <div dangerouslySetInnerHTML={{__html:svg.twitter}}/>
+            <div dangerouslySetInnerHTML={{__html:svg.instagram}}/>
+            <div dangerouslySetInnerHTML={{__html:svg.facebook}}/>
+            <div dangerouslySetInnerHTML={{__html:svg.linkedin}}/>
           </div>
         </div>
 

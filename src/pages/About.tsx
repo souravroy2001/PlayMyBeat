@@ -179,53 +179,9 @@ export default function About() {
               <p className="text-[#A0A0A5] text-sm mt-2">
                 {["Founder & CEO", "CTO", "Head of Design"][idx]}
               </p>
-              <div className="flex gap-4 mt-3">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="url(#linkedinGradient)"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient
-                      id="linkedinGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop offset="0%" stopColor="#F6942B" />
-                      <stop offset="50%" stopColor="#E0405E" />
-                      <stop offset="100%" stopColor="#981DA0" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" />
-                  <rect width="4" height="12" x="2" y="9" rx="1" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="url(#twitterGradient)"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient
-                      id="twitterGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop offset="0%" stopColor="#F6942B" />
-                      <stop offset="50%" stopColor="#E0405E" />
-                      <stop offset="100%" stopColor="#981DA0" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M23 3a10.9 10.9 0 01-3.14.86A4.48 4.48 0 0022.4.36a9.07 9.07 0 01-2.88 1.1A4.52 4.52 0 0016.33 0c-2.5 0-4.51 2-4.51 4.5 0 .35.04.7.1 1.03A12.84 12.84 0 013 1.2a4.47 4.47 0 00-.61 2.26c0 1.56.8 2.94 2 3.75A4.52 4.52 0 012 6.82v.04c0 2.18 1.54 3.99 3.58 4.4-.38.1-.78.16-1.2.16-.29 0-.57-.03-.84-.08.57 1.78 2.22 3.07 4.18 3.1A9.07 9.07 0 010 19.54a12.8 12.8 0 006.93 2.03c8.33 0 12.89-6.89 12.89-12.89 0-.2-.01-.41-.02-.61A9.22 9.22 0 0023 3z" />
-                </svg>
+              <div className="flex flex-row gap-4 mt-3 justify-center items-center">
+                <div dangerouslySetInnerHTML={{ __html: svg.linkedin }} />
+                <div dangerouslySetInnerHTML={{ __html: svg.twitter }} />
               </div>
             </div>
           ))}

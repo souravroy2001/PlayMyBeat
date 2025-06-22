@@ -10,6 +10,12 @@ import HowItWork from "./pages/HowItWork.tsx";
 import About from "./pages/About.tsx";
 import Footer from "./components/Footer.tsx";
 import Pricing from "./pages/Pricing.tsx";
+import Features from "./pages/Features.tsx";
+import HelpCenter from "./pages/HelpCenter.tsx";
+import ContactUs from "./pages/ContactUs.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import TermsService from "./pages/TermsService.tsx";
+import Login from "./components/Login.tsx";
 
 function App() {
   useEffect(() => {
@@ -37,6 +43,12 @@ function App() {
         <Route path="/how-it-work" element={<HowItWork />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/help-center" element={<HelpCenter />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-Service" element={<TermsService />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </>

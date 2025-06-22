@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
 import Logo from "../assets/images/PlayMyBeat_light_Logo.png";
+import svg from "../utils/svg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,42 +26,23 @@ export default function Navbar() {
         <div className="hidden md:flex">
           <Link
             to="/login"
-            className="text-white px-4 py-2 rounded-full shadow_box font-medium"
+            className="text-white px-4 py-2 rounded-lg shadow_box font-medium"
             style={{
               backgroundImage:
                 "linear-gradient(90deg,rgba(246, 148, 43, 1) 0%, rgba(224, 64, 94, 1) 50%, rgba(152, 29, 160, 1) 100%)",
             }}
           >
-            Login
+            Get Started
           </Link>
         </div>
 
         {/* Hamburger Icon */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            
+            {
+              menuOpen ? <div dangerouslySetInnerHTML={{ __html: svg.close }} /> : <div dangerouslySetInnerHTML={{ __html: svg.threeBar }} />
+            }
           </button>
         </div>
       </div>
@@ -73,14 +55,14 @@ export default function Navbar() {
           <NavLink className="text-white nav_tag" to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
           <Link
             to="/login"
-            className="text-white px-4 py-2 rounded-full text-center font-medium shadow_box"
+            className="text-white px-4 py-2 rounded-lg text-center font-medium shadow_box"
             onClick={() => setMenuOpen(false)}
             style={{
               backgroundImage:
                 "linear-gradient(90deg,rgba(246, 148, 43, 1) 0%, rgba(224, 64, 94, 1) 50%, rgba(152, 29, 160, 1) 100%)",
             }}
           >
-            Login
+            Get Started
           </Link>
         </div>
       )}

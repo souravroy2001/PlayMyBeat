@@ -681,6 +681,102 @@ const svg = {
           stroke-width="4"
           stroke-linecap="round"
         />
+      </svg>`,
+  userIcon : `<svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="gradientFillStart"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stop-color="rgba(246, 148, 43, 1)" />
+            <stop offset="50%" stop-color="rgba(224, 64, 94, 1)" />
+            <stop offset="100%" stop-color="rgba(152, 29, 160, 1)" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#gradientFillStart)"
+          d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5zm0 14c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"
+        />
+      </svg>`,
+  payments : `<svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="gradientFillPayment"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stop-color="rgba(246, 148, 43, 1)" />
+            <stop offset="50%" stop-color="rgba(224, 64, 94, 1)" />
+            <stop offset="100%" stop-color="rgba(152, 29, 160, 1)" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#gradientFillPayment)"
+          d="M2 4h20v16H2V4zm2 2v2h16V6H4zm0 6v6h16v-6H4z"
+        />
+      </svg>`, 
+  voting : `<svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="gradientFillVoting"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stop-color="rgba(246, 148, 43, 1)" />
+            <stop offset="50%" stop-color="rgba(224, 64, 94, 1)" />
+            <stop offset="100%" stop-color="rgba(152, 29, 160, 1)" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#gradientFillVoting)"
+          d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2v-4h-2v4zm4 0h2V4h-2v13zm4 0h2v-9h-2v9z"
+        />
+      </svg>`, 
+  setting : `<svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="gradientFillTech"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stop-color="rgba(246, 148, 43, 1)" />
+            <stop offset="50%" stop-color="rgba(224, 64, 94, 1)" />
+            <stop offset="100%" stop-color="rgba(152, 29, 160, 1)" />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#gradientFillTech)"
+          d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.63l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.06 7.06 0 00-1.7-.98l-.38-2.65a.5.5 0 00-.5-.42h-4a.5.5 0 00-.5.42l-.38 2.65a7.06 7.06 0 00-1.7.98l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.63l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 00-.12.63l2 3.46a.5.5 0 00.6.22l2.49-1c.52.4 1.09.73 1.7.98l.38 2.65a.5.5 0 00.5.42h4a.5.5 0 00.5-.42l.38-2.65c.61-.25 1.18-.58 1.7-.98l2.49 1a.5.5 0 00.6-.22l2-3.46a.5.5 0 00-.12-.63l-2.11-1.65zM12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"
+        />
       </svg>`
 };
 

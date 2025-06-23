@@ -5,9 +5,10 @@ import TeamImage1 from "../assets/images/Team_Image_1.jpg";
 import TeamImage2 from "../assets/images/Team_Image_2.jpg";
 import TeamImage3 from "../assets/images/Team_Image_3.jpg";
 import { Link } from "react-router";
+import type { TIMELINE_DATE } from "../utils/interface";
 
 export default function About() {
-  const timelineData = [
+  const timelineData: TIMELINE_DATE[] = [
     {
       year: "2024",
       title: "Founded",

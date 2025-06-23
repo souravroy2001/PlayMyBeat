@@ -1,10 +1,5 @@
+import type { FEATURES } from "../utils/interface";
 import svg from "../utils/svg";
-
-interface FEATURES {
-  icon: string;
-  title: string;
-  description: string;
-}
 
 export default function Features() {
   const features: FEATURES[] = [

@@ -1,7 +1,8 @@
+import type { PRICE_CARD } from "../utils/interface";
 import svg from "../utils/svg";
 
 export default function Pricing() {
-  const priceCard = [
+  const priceCard: PRICE_CARD[] = [
     {
       title: "Starter Pack",
       price: 99,
@@ -111,8 +112,12 @@ export default function Pricing() {
             style={{ boxShadow: "rgba(255, 255, 255, 0.15) 0 0 8px 0" }}
           >
             <div>
-              <h1 className="text-white mb-2 text-xl font-bold">{item.title}</h1>
-              <p className="text-white mb-1 text-3xl font-extrabold">₹{item.price}</p>
+              <h1 className="text-white mb-2 text-xl font-bold">
+                {item.title}
+              </h1>
+              <p className="text-white mb-1 text-3xl font-extrabold">
+                ₹{item.price}
+              </p>
               <p className="text-[#9CA3AF] text-sm">{item.value}</p>
             </div>
             <div className="flex flex-col gap-3">

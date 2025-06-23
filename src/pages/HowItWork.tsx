@@ -1,7 +1,8 @@
+import type { FREQUENTLY } from "../utils/interface";
 import svg from "../utils/svg";
 
 export default function HowItWork() {
-  const frequently = [
+  const frequently: FREQUENTLY[] = [
     {
       title: "How many songs can I request?",
       description:

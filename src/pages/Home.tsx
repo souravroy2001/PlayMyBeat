@@ -89,7 +89,7 @@ export default function Home() {
           </h2>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-around w-full gap-6 text-center">
+          <div className="flex flex-wrap justify-around w-[60%] gap-6 text-center">
             <div>
               <h3 className="text-xl md:text-2xl font-bold gradient_text">
                 10K+

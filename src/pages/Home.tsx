@@ -6,22 +6,31 @@ import image_2 from "../assets/images/Image_2.png";
 import image_3 from "../assets/images/Image_3.png";
 import image_4 from "../assets/images/Image_4.png";
 import image_5 from "../assets/images/Image_5.png";
+import BlurText from "../animations/BlurText";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0F0F1F] text-white flex flex-col items-center justify-start">
       {/* Hero Section */}
       <div
-        className="relative w-full h-[460px] bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-[460px] bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div
           className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center"
           style={{ backgroundColor: "rgba(15, 15, 31, 0.4)" }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold gradient_text">
+          <BlurText
+            text="Drop the Beat. Own the Night."
+            delay={150}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={() => console.log("Animation Complete")}
+            className="text-4xl md:text-6xl font-bold "
+          />
+          {/* <h1 className="text-4xl md:text-6xl font-bold gradient_text">
             Drop the Beat. Own the Night.
-          </h1>
+          </h1> */}
           <p className="text-lg md:text-xl mt-4">
             Request Songs. Control the Vibe. Rule the Night.
           </p>
@@ -68,7 +77,7 @@ export default function Home() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#1A1A2E] rounded-lg p-6 w-full sm:w-[300px] flex flex-col gap-4"
+              className="bg-[#1A1A2E] rounded-lg p-6 w-full sm:w-[300px] flex flex-col gap-4 border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
               style={{
                 boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
               }}

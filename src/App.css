@@ -8,16 +8,17 @@
 }
 
 :root {
-  --font-primary: "PlayMyBeat", sans-serif;
+  --font-primary: 'Urbanist', sans-serif;
 }
 
 ::selection {
-  background-color: #222221;
+  background-color: #e96348;
   color: #ffffff;
 }
 
 body {
   font-family: var(--font-primary);
+  background-color: #0a0a15;
 }
 
 .nav_tag {
@@ -34,9 +35,9 @@ body {
   width: 0;
   background-image: linear-gradient(
     90deg,
-    rgba(246, 148, 43, 1),
-    rgba(224, 64, 94, 1),
-    rgba(152, 29, 160, 1)
+    #f6942b,
+    #e0405e,
+    #981da0
   );
   border-radius: 10px;
   transition: width 0.4s ease-in-out;

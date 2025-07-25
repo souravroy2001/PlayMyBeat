@@ -6,6 +6,8 @@ import TeamImage2 from "../assets/images/Team_Image_2.jpg";
 import TeamImage3 from "../assets/images/Team_Image_3.jpg";
 import { Link } from "react-router";
 import type { TIMELINE_DATE } from "../utils/interface";
+import GradientText from "../animations/GradientText";
+import NormalBlurText from "../animations/NormalBlurText";
 
 export default function About() {
   const timelineData: TIMELINE_DATE[] = [
@@ -35,12 +37,31 @@ export default function About() {
       >
         <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center px-6 sm:px-10 md:items-start md:px-20 lg:px-32">
           <div className="text-center md:text-left max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white">
+            <NormalBlurText
+              text="About PlayMyBeat"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => console.log("Animation Complete")}
+              className="text-4xl md:text-6xl font-bold text-white"
+            />
+            {/* <h1 className="text-4xl md:text-6xl font-bold text-white">
               About PlayMyBeat
-            </h1>
-            <p className="text-lg md:text-xl mt-4 text-white mb-5 gradient_text">
+            </h1> */}
+            <GradientText
+              colors={[
+                "rgba(246, 148, 43, 1)",
+                "rgba(224, 64, 94, 1)",
+                "rgba(152, 29, 160, 1)",
+              ]}
+              animationSpeed={3}
+              showBorder={false}
+            >
               Bringing Control of the Music Back to the Crowd
-            </p>
+            </GradientText>
+            {/* <p className="text-lg md:text-xl mt-4 text-white mb-5 gradient_text">
+               Bringing Control of the Music Back to the Crowd
+            </p> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="96"
@@ -70,9 +91,17 @@ export default function About() {
       <div className="w-full bg-[#0A0A15] py-10 px-4">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="w-full md:w-1/2 flex flex-col gap-5">
-            <h1 className="text-white text-3xl md:text-5xl font-bold">
+            <NormalBlurText
+              text="Our Mission"
+              delay={200}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => console.log("Animation Complete")}
+              className="text-white text-3xl md:text-5xl font-bold"
+            />
+            {/* <h1 className="text-white text-3xl md:text-5xl font-bold">
               Our Mission
-            </h1>
+            </h1> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="96"
@@ -118,9 +147,17 @@ export default function About() {
 
       {/* What We Believe */}
       <div className="bg-[#151933] py-16 px-4 flex flex-col items-center">
-        <h1 className="text-white text-3xl md:text-5xl mb-8">
+        <NormalBlurText
+          text="What We Believe"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={() => console.log("Animation Complete")}
+          className="text-white text-3xl md:text-5xl mb-8"
+        />
+        {/* <h1 className="text-white text-3xl md:text-5xl mb-8">
           What We Believe
-        </h1>
+        </h1> */}
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -143,7 +180,7 @@ export default function About() {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-[#21253D] p-6 rounded-2xl"
+              className="bg-[#21253D] p-6 rounded-2xl border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
               style={{
                 boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
               }}
@@ -160,7 +197,15 @@ export default function About() {
 
       {/* Meet Our Team */}
       <div className="bg-[#0A0A15] py-16 px-4 flex flex-col items-center">
-        <h3 className="text-white text-3xl md:text-5xl mb-8">Meet Our Team</h3>
+        <NormalBlurText
+          text="Meet Our Team"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={() => console.log("Animation Complete")}
+          className="text-white text-3xl md:text-5xl mb-8"
+        />
+        {/* <h3 className="text-white text-3xl md:text-5xl mb-8">Meet Our Team</h3> */}
         <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[TeamImage1, TeamImage2, TeamImage3].map((img, idx) => (
             <div
@@ -181,8 +226,14 @@ export default function About() {
                 {["Founder & CEO", "CTO", "Head of Design"][idx]}
               </p>
               <div className="flex flex-row gap-4 mt-3 justify-center items-center">
-                <div dangerouslySetInnerHTML={{ __html: svg.linkedin }} />
-                <div dangerouslySetInnerHTML={{ __html: svg.twitter }} />
+                <div
+                  className="cursor-pointer"
+                  dangerouslySetInnerHTML={{ __html: svg.linkedin }}
+                />
+                <div
+                  className="cursor-pointer"
+                  dangerouslySetInnerHTML={{ __html: svg.twitter }}
+                />
               </div>
             </div>
           ))}
@@ -192,9 +243,20 @@ export default function About() {
       {/* Our Journey */}
       <div className="bg-[#151933] py-16 px-4 w-full mx-auto flex flex-row justify-center items-center text-center">
         <div className="w-[1200px]">
-          <h2 className="text-3xl text-white md:text-4xl font-bold mb-10">
+          <div className="flex flex-col justify-center items-center">
+            <NormalBlurText
+              text="Our Journey"
+              delay={200}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => console.log("Animation Complete")}
+              className="text-3xl text-white md:text-4xl font-bold mb-10"
+            />
+          </div>
+
+          {/* <h2 className="text-3xl text-white md:text-4xl font-bold mb-10">
             Our Journey
-          </h2>
+          </h2> */}
 
           {/* Timeline Line */}
           <div className="relative mb-12 hidden md:flex justify-between items-center px-2">
@@ -218,7 +280,7 @@ export default function About() {
             {timelineData.map((item, index) => (
               <div
                 key={index}
-                className="bg-[#21253D] w-full md:w-1/3 h-[200px] flex flex-col justify-center items-center p-6 rounded-xl shadow-md transition hover:shadow-lg"
+                className="bg-[#21253D] w-full md:w-1/3 h-[200px] flex flex-col justify-center items-center p-6 rounded-xl shadow-md hover:shadow-lg border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
                 style={{
                   boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
                 }}
@@ -237,15 +299,23 @@ export default function About() {
       </div>
 
       {/* Join Our Revolution */}
-      <div className="bg-[#0B0B13] text-center py-20 px-6">
-        <h2 className="text-3xl text-white md:text-5xl font-extrabold mb-4">
+      <div className="bg-[#0B0B13] text-center flex flex-col justify-center items-center py-20 px-6">
+        <NormalBlurText
+          text="Join Our Revolution"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={() => console.log("Animation Complete")}
+          className="text-3xl text-white md:text-5xl font-extrabold mb-4"
+        />
+        {/* <h2 className="text-3xl text-white md:text-5xl font-extrabold mb-4">
           Join Our Revolution
-        </h2>
-        <p className="gradient_text mb-8 text-base md:text-lg">
+        </h2> */}
+        <p className="mb-8 text-base md:text-lg gradient_text">
           Be part of the future of music
         </p>
         <Link
-          to="/get-started"
+          to="/login"
           className="inline-block px-6 py-3 text-white rounded-full text-base font-medium"
           style={{
             backgroundImage:

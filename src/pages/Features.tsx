@@ -74,7 +74,7 @@ export default function Features() {
         {features.map((item, index) => (
           <div
             key={index}
-            className="bg-[#151518] w-full sm:w-[80%] md:w-[45%] lg:w-[30%] p-6 min-h-[280px] flex flex-col gap-4 rounded-2xl shadow-[0_0_8px_rgba(255,255,255,0.15)]"
+            className="bg-[#151518] w-full sm:w-[80%] md:w-[45%] lg:w-[30%] p-6 min-h-[280px] flex flex-col gap-4 rounded-2xl shadow-[0_0_8px_rgba(255,255,255,0.15)] border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
           >
             <div dangerouslySetInnerHTML={{ __html: svg.arrowUp }} />
             <h3 className="text-white font-bold text-lg">{item.title}</h3>
@@ -88,7 +88,7 @@ export default function Features() {
         {insights.map((item, index) => (
           <div
             key={index}
-            className="w-full sm:w-[90%] md:w-[70%] lg:w-[45%] xl:w-[40%] bg-[#1A1A2E] p-6 min-h-[180px] rounded-2xl flex items-center gap-5"
+            className="w-full sm:w-[90%] md:w-[70%] lg:w-[45%] xl:w-[40%] bg-[#1A1A2E] p-6 min-h-[180px] rounded-2xl flex items-center gap-5 border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
           >
             <div>
               <div

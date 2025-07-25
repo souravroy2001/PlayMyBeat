@@ -16,6 +16,7 @@ import ContactUs from "./pages/ContactUs.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsService from "./pages/TermsService.tsx";
 import Login from "./components/Login.tsx";
+import Register from "./components/Register.tsx";
 
 function App() {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-Service" element={<TermsService />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </>

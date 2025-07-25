@@ -238,36 +238,7 @@ export default function HelpCenter() {
           <div className="flex items-center pr-2">
             {/* Search Icon */}
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <defs>
-                <clipPath id="clipPath0669954506">
-                  <path
-                    d="M0 0L24 0L24 24L0 24L0 0Z"
-                    fill-rule="nonzero"
-                    transform="matrix(1 0 0 1 0 0)"
-                  />
-                </clipPath>
-              </defs>
-              <g clip-path="url(#clipPath0669954506)">
-                <path
-                  d="M7.36359 0.75Q4.62415 0.75 2.68708 2.68708Q0.75 4.62415 0.75 7.36359Q0.75 10.103 2.68708 12.0401Q4.62416 13.9772 7.36359 13.9772Q10.103 13.9772 12.0401 12.0401Q13.9772 10.103 13.9772 7.36359Q13.977 4.62425 12.04 2.68721Q10.1029 0.750174 7.36354 0.75L7.36359 0.75ZM7.36364 -0.75Q10.7243 -0.749786 13.1006 1.62655Q15.477 4.0029 15.4772 7.36359Q15.4772 10.7244 13.1008 13.1008Q10.7243 15.4772 7.36359 15.4772Q4.00283 15.4772 1.62642 13.1008Q-0.75 10.7244 -0.75 7.36359Q-0.75 4.00283 1.62642 1.62642Q4.00283 -0.75 7.36359 -0.75L7.36364 -0.75Z"
-                  fill-rule="nonzero"
-                  transform="matrix(1 0 0 1 3 3)"
-                  fill="rgb(156, 163, 175)"
-                />
-                <path
-                  d="M-0.53033 0.53033C-0.823221 0.237439 -0.823221 -0.237439 -0.53033 -0.53033C-0.237439 -0.823221 0.237439 -0.823221 0.53033 -0.53033L5.67299 4.61233C5.96588 4.90522 5.96588 5.3801 5.67299 5.67299C5.3801 5.96588 4.90522 5.96588 4.61233 5.67299L-0.53033 0.53033Z"
-                  fill-rule="evenodd"
-                  transform="matrix(1 0 0 1 15.8573 15.8573)"
-                  fill="rgb(156, 163, 175)"
-                />
-              </g>
-            </svg>
+            <div dangerouslySetInnerHTML={{ __html: svg.searchIcon }} />
           </div>
           <input
             className="w-full bg-transparent outline-none text-white placeholder:text-gray-400 px-2 py-2 text-base"
@@ -286,7 +257,7 @@ export default function HelpCenter() {
                 setSelectedTag((prev) => (prev === item ? "" : item))
               }
               key={index}
-              className="px-4 py-2 text-sm bg-[#2A2A2A] rounded-full text-white text-center cursor-pointer"
+              className="px-4 py-2 text-sm bg-[#2A2A2A] rounded-full text-white text-center border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
             >
               {item}
             </span>
@@ -294,21 +265,20 @@ export default function HelpCenter() {
         </div>
       </div>
 
-      <div className="w-full bg-[#0A0A0D] px-9 py-10 flex flex-col lg:flex-row gap-8">
+      <div className="w-full bg-[#0A0A0D] lg:px-9 lg:py-10 sm:px-5 sm:py-4 flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}
-        <div className="w-full lg:w-1/4 h-fit lg:h-[calc(100vh-100px)] sticky top-[100px] flex flex-col gap-5 overflow-auto">
+        <div className="w-full lg:w-1/4 h-fit lg:h-[calc(100vh-100px)] lg:sticky lg:top-[100px] flex flex-col gap-5 overflow-auto">
           {helpCenter.map((item, index) => (
             <HashLink
+              key={index}
               to={`#${item.heading.split(" ")[0]}`}
               scroll={(el) =>
                 el.scrollIntoView({ behavior: "smooth", block: "start" })
               }
               onClick={() => setSelectedTag("")}
+              className="border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer rounded-md text-white"
             >
-              <div
-                key={index}
-                className="flex items-center gap-3 py-1 px-3 justify-baseline"
-              >
+              <div className="flex items-center gap-3 py-1 px-3 justify-baseline">
                 {index === 3 ? (
                   <img src={item.icon} className="w-7 h-7" alt="" />
                 ) : (
@@ -333,7 +303,7 @@ export default function HelpCenter() {
               {tagFaqMap[selectedTag]?.map((q, i) => (
                 <details
                   key={i}
-                  className="mb-4 bg-[#111114] p-4 rounded-lg"
+                  className="mb-4 bg-[#111114] p-4 rounded-lg border-l-4 border-[#E96348] cursor-pointer"
                   style={{
                     boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
                   }}
@@ -361,39 +331,50 @@ export default function HelpCenter() {
               ))}
             </div>
           ) : searchValue ? (
-            helpCenter
-              .map((section) => {
-                const sectionMatches = section.heading
-                  .toLowerCase()
-                  .includes(searchValue);
-                const filteredQuestions = section.question.filter(
-                  (q) =>
-                    q.title.toLowerCase().includes(searchValue) ||
-                    q.description.toLowerCase().includes(searchValue)
-                );
-                if (sectionMatches && filteredQuestions.length === 0) {
+            (() => {
+              const filteredSections = helpCenter
+                .map((section) => {
+                  const sectionMatches = section.heading
+                    .toLowerCase()
+                    .includes(searchValue);
+                  const filteredQuestions = section.question.filter(
+                    (q) =>
+                      q.title.toLowerCase().includes(searchValue) ||
+                      q.description.toLowerCase().includes(searchValue)
+                  );
+                  if (sectionMatches && filteredQuestions.length === 0) {
                   // Include all questions if only heading matches
-                  return section;
-                } else if (filteredQuestions.length > 0) {
+                    return section;
+                  } else if (filteredQuestions.length > 0) {
                   // Include matched questions if any match
-                  return { ...section, question: filteredQuestions };
-                } else {
-                  return null;
-                }
-              })
-              .filter(Boolean)
-              .map((section, index) => (
+                    return { ...section, question: filteredQuestions };
+                  } else {
+                    return null;
+                  }
+                })
+                .filter(Boolean);
+
+              if (filteredSections.length === 0) {
+                return (
+                  <div className="text-center text-gray-400 text-lg mt-10">
+                    No results found for "
+                    <span className="text-white">{searchValue}</span>"
+                  </div>
+                );
+              }
+
+              return filteredSections?.map((section, index) => (
                 <div key={index}>
                   <h3
-                    id={section!.heading.split(" ")[0]}
+                    id={section?.heading.split(" ")[0]}
                     className="text-xl sm:text-2xl font-bold mb-4 scroll-mt-20"
                   >
-                    {section!.heading}
+                    {section?.heading}
                   </h3>
-                  {section!.question.map((q, i) => (
+                  {section?.question.map((q, i) => (
                     <details
                       key={i}
-                      className="mb-4 bg-[#111114] p-4 rounded-lg"
+                      className="mb-4 bg-[#111114] p-4 rounded-lg border-l-4 border-[#E96348] cursor-pointer"
                       style={{
                         boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
                       }}
@@ -420,7 +401,8 @@ export default function HelpCenter() {
                     </details>
                   ))}
                 </div>
-              ))
+              ));
+            })()
           ) : (
             helpCenter.map((section, index) => (
               <div key={index}>
@@ -433,7 +415,7 @@ export default function HelpCenter() {
                 {section.question.map((q, i) => (
                   <details
                     key={i}
-                    className="mb-4 bg-[#111114] p-4 rounded-lg"
+                    className="mb-4 bg-[#111114] p-4 rounded-lg border-l-4 border-[#E96348] cursor-pointer"
                     style={{
                       boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
                     }}
@@ -462,6 +444,27 @@ export default function HelpCenter() {
               </div>
             ))
           )}
+        </div>
+      </div>
+
+      <div className="h-[350px] w-full flex flex-col justify-center items-center gap-10">
+        <div className="flex flex-col justify-center items-center gap-3">
+          <h3 className="text-4xl leading-[38px] font-bold">
+            Still need help?
+          </h3>
+          <p className="text-xl leading-[24px] text-center">
+            Our support team is here for you 24/7
+          </p>
+        </div>
+        <div className="flex flex-row justify-center items-center gap-5">
+          <button className="flex flex-row justify-center items-center gap-2 py-3 px-5 bg-green-600 rounded-full">
+            <div dangerouslySetInnerHTML={{ __html: svg.liveChat }} />
+            Live Chat
+          </button>
+          <button className="flex flex-row justify-center items-center gap-2 py-3 px-5 border border-[#333] rounded-full">
+            <div dangerouslySetInnerHTML={{ __html: svg.email }} />
+            Send Email
+          </button>
         </div>
       </div>
     </div>

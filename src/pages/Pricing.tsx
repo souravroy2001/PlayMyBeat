@@ -1,3 +1,4 @@
+import NormalBlurText from "../animations/NormalBlurText";
 import type { PRICE_CARD } from "../utils/interface";
 import svg from "../utils/svg";
 
@@ -74,10 +75,18 @@ export default function Pricing() {
   return (
     <div className="w-full min-h-screen bg-[#0A0A0B] flex flex-col items-center px-4 py-10">
       {/* Heading */}
-      <div className="text-center mb-15 mt-10">
-        <h1 className="text-white text-3xl md:text-4xl font-bold mb-2">
+      <div className="text-center flex items-center flex-col mb-15 mt-10">
+        <NormalBlurText
+          text="Choose Your Beat Plan"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={() => console.log("Animation Complete")}
+          className="text-white text-3xl md:text-4xl font-bold mb-2"
+        />
+        {/* <h1 className="text-white text-3xl md:text-4xl font-bold mb-2">
           Choose Your Beat Plan
-        </h1>
+        </h1> */}
         <p className="text-[#9CA3AF] text-base md:text-lg">
           Get unlimited access to premium music with our flexible credit packs
         </p>
@@ -85,7 +94,7 @@ export default function Pricing() {
 
       {/* Credits Status */}
       <div
-        className="bg-[#151518] w-full max-w-md p-6 rounded-2xl flex flex-col items-center gap-4 mb-12"
+        className="bg-[#151518] w-full max-w-md p-6 rounded-2xl flex flex-col items-center gap-4 mb-12 border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
         style={{ boxShadow: "rgba(255, 255, 255, 0.15) 0 0 8px 0" }}
       >
         <div
@@ -108,7 +117,7 @@ export default function Pricing() {
         {priceCard.map((item, index) => (
           <div
             key={index}
-            className="bg-[#151518] w-full sm:w-[90%] md:w-[30%] p-6 flex flex-col gap-6 rounded-2xl"
+            className="bg-[#151518] w-full sm:w-[90%] md:w-[30%] p-6 flex flex-col gap-6 rounded-2xl border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
             style={{ boxShadow: "rgba(255, 255, 255, 0.15) 0 0 8px 0" }}
           >
             <div>
@@ -152,7 +161,7 @@ export default function Pricing() {
         {frequently.map((faq, index) => (
           <div
             key={index}
-            className="w-full sm:w-11/12 lg:w-3/5 bg-[#111114] p-4 rounded-lg"
+            className="w-full sm:w-11/12 lg:w-3/5 bg-[#111114] p-4 rounded-lg border-l-4 border-[#E96348] cursor-pointer"
             style={{ boxShadow: "rgba(255, 255, 255, 0.15) 0 0 8px 0" }}
           >
             <details className="text-white cursor-pointer">

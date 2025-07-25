@@ -1,3 +1,4 @@
+import NormalBlurText from "../animations/NormalBlurText";
 import type { FREQUENTLY } from "../utils/interface";
 import svg from "../utils/svg";
 
@@ -45,9 +46,17 @@ export default function HowItWork() {
       {/* Main section */}
       <div className="flex flex-col justify-center items-center w-full min-h-[306px] gap-3 px-4 text-center">
         <div dangerouslySetInnerHTML={{ __html: svg.music }} />
-        <h1 className="text-white text-3xl md:text-4xl font-extrabold">
+        <NormalBlurText
+          text="How It Works"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={() => console.log("Animation Complete")}
+          className="text-white text-3xl md:text-4xl font-extrabold"
+        />
+        {/* <h1 className="text-white text-3xl md:text-4xl font-extrabold">
           How It Works
-        </h1>
+        </h1> */}
         <p className="text-[#A0A0A5] text-sm md:text-base max-w-md">
           Discover how to get your favorite music played in just three simple
           steps
@@ -75,7 +84,7 @@ export default function HowItWork() {
         ].map((item, index) => (
           <div
             key={index}
-            className="w-full md:w-1/3 bg-[#111114] rounded-lg flex flex-col justify-around items-center p-6 text-center"
+            className="w-full md:w-1/3 bg-[#111114] rounded-lg flex flex-col justify-around items-center p-6 text-center border border-transparent hover:border-[#E96348] transition-colors duration-200 cursor-pointer"
             style={{
               boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
             }}
@@ -95,13 +104,13 @@ export default function HowItWork() {
 
       {/* FAQ Section */}
       <div
-        className="w-full p-5 flex flex-col justify-center items-center gap-6 bg-[#0A0A0C] pb-12"
+        className="w-full p-5 flex flex-col justify-center items-center gap-6 bg-[#0A0A0C] pb-12 scroll-mt-20"
         id="FAQ"
       >
         {frequently.map((faq, index) => (
           <div
             key={index}
-            className="w-full sm:w-[90%] lg:w-[60%] bg-[#111114] p-5 rounded-lg"
+            className="w-full sm:w-[90%] lg:w-[60%] bg-[#111114] p-5 rounded-lg border-l-4 border-[#E96348] cursor-pointer"
             style={{
               boxShadow: "rgba(255, 255, 255, 0.15) 0px 0px 8px 0px",
             }}

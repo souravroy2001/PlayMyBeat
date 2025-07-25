@@ -33,6 +33,18 @@ interface PRICE_CARD {
     price: number;
     value: string;
     benefit: string[];
+};
+
+interface PrivacyData { 
+    icon: string;
+    title: string;
+    text?: string;
+    sections?: {
+        heading: string;
+        text?: string;
+        list?: string[];
+    }[];
+    list?: string[];
 }
 
-export type { TAG_FAQ_MAP, HELP_CENTER, TIMELINE_DATE, FEATURES, FREQUENTLY, PRICE_CARD };
+export type { TAG_FAQ_MAP, HELP_CENTER, TIMELINE_DATE, FEATURES, FREQUENTLY, PRICE_CARD, PrivacyData };
